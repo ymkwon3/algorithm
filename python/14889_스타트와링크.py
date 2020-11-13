@@ -12,7 +12,9 @@ def init():
     member = [i for i in range(n)]
     teams = list(combinations(member, n//2))
     minimum = 101
-    for team in teams:
+    for index, team in enumerate(teams):
+        if index >= len(teams)//2:
+            break
         restTeam = set(member) - set(team)
         minimum = min(minimum,BruteForce(team, restTeam))
     print(minimum)
