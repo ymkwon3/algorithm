@@ -14,45 +14,64 @@
 */
 
 #include <iostream>
-#include <algorithm>
+#include <cmath>
+#include <vector>
 
 using namespace std;
 
 const int wheel = 4, gear = 8;
+vector<vector<int>> wheels(wheel, vector<int>(gear,0));
 
+void rotate(int wheelNumber, int direction, int preWheel){
+    int pre = 0, next = 0;
 
-int* rotate(int arr[], int direction){
-    int rotated[gear] = {0,};
+    if(wheelNumber == 0){ // 첫번째 바퀴일 경우
+        if((wheels[wheelNumber][2] != wheels[wheelNumber + 1][6]) && wheelNumber + 1 != preWheel){
+            rotate(wheelNumber + 1, -direction, wheelNumber);
+        }
+    }else if(wheelNumber == wheel - 1){ // 마지막 바퀴일 경우
+        if((wheels[wheelNumber][6] != wheels[wheelNumber - 1][2]) && wheelNumber - 1 != preWheel){
+            rotate(wheelNumber - 1, -direction, wheelNumber);
+        }
+    }else{ // 바퀴의 양 옆에 바퀴가 존재할 경우
+        if((wheels[wheelNumber][6] != wheels[wheelNumber - 1][2]) && wheelNumber - 1 != preWheel){ // left
+            rotate(wheelNumber - 1, -direction, wheelNumber);
+        }
+        if((wheels[wheelNumber][2] != wheels[wheelNumber + 1][6]) && wheelNumber + 1 != preWheel){ // right
+            rotate(wheelNumber + 1, -direction, wheelNumber);
+        }
+    }
 
     if(direction == 1){ // right rotate
+        pre = wheels[wheelNumber][0];
         for(int i = 0; i < gear; i++){
             if (i == gear-1){
-                printf("bye %d\n", arr[i]);
-                rotated[0] = arr[i];
+                wheels[wheelNumber][0] = next;
             }
             else{
-                printf("hello %d\n", arr[i]);
-                rotated[i+1] = arr[i];
+                next = wheels[wheelNumber][i+1];
+                wheels[wheelNumber][i+1] = pre;
+                pre = next;
             }
         }
     }
     else if(direction == -1){ // left rotate
-        for(int i = 0; i < gear; i++){
+        pre = wheels[wheelNumber][gear-1];
+        for(int i = gear-1; i >= 0; i--){
             if (i == 0){
-                rotated[gear-1] = arr[i];
+                wheels[wheelNumber][gear-1] = next;
             }
             else{
-                rotated[i-1] = arr[i];
+                next = wheels[wheelNumber][i-1];
+                wheels[wheelNumber][i-1] = pre;
+                pre = next;
             }
         }
     }
-    copy(arr, arr+gear, rotated);
-    
-    return arr;
 }
 
 int main(void){
-    int wheels[wheel][gear];
+    int rotateCount = 0, wheelNumber = 0, direction = 0, result = 0;
 
     for(int i = 0; i < wheel; i++){
         for(int j = 0; j < gear; j++){
@@ -60,16 +79,20 @@ int main(void){
         }
     }
 
-    for(int i = 0; i < wheel; i++){
-        for(int j = 0; j < gear; j++){
-            printf("%d", wheels[i][j]);
+    scanf("%d", &rotateCount);
+
+    for(int i = 0; i < rotateCount; i++){
+        scanf("%d %d", &wheelNumber, &direction);
+        rotate(wheelNumber - 1, direction, -1);
+    }
+    
+    for (int i = 0; i < wheel; i++){
+        if(wheels[i][0] == 1){
+            result += pow(2, i);
         }
-        printf("\n");
     }
-    int *ptr = rotate(wheels[0], 1);
-    for(int i = 0; i < gear; i++){
-        printf("%d", ptr[i]);
-    }
+
+    printf("%d\n", result);
 
     return 0;
 }
