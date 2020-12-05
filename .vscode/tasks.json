@@ -3,13 +3,16 @@
     "runner": "terminal",
     "type": "shell",
     "echoCommand": true,
-    "presentation" : { "showReuseMessage": false },
+    "presentation": {
+        "showReuseMessage": false
+    },
     "tasks": [
         {
             "label": "save and compile for C++",
             "command": "g++",
             "args": [
                 "${file}",
+                "-g",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
@@ -34,6 +37,7 @@
             "command": "gcc",
             "args": [
                 "${file}",
+                "-g",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
@@ -67,8 +71,8 @@
             "label": "C/C++: gcc.exe build active file",
             "command": "C:\\compiler\\mingw64\\bin\\gcc.exe",
             "args": [
-                "-g",
                 "${file}",
+                "-g",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
@@ -80,6 +84,28 @@
             ],
             "group": "build",
             "detail": "compiler: C:\\compiler\\mingw64\\bin\\gcc.exe"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:/compiler/mingw64/bin/g++.exe",
+            "args": [
+                "${file}",
+                "-g",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/compiler/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Generated task by Debugger"
         }
     ]
 }

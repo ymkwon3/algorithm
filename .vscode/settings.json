@@ -3,6 +3,8 @@
         "iostream": "cpp",
         "algorithm": "cpp",
         "vector": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "charconv": "cpp",
+        "cstring": "cpp"
     }
 }
