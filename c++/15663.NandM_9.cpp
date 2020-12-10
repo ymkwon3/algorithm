@@ -1,10 +1,12 @@
-/*
-오름차순
-*/
 #include <iostream>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
+
 const int MAX = 9;
+
+vector<int> input;
 int arr[MAX];
 int visited[MAX];
 int n, m;
@@ -12,18 +14,18 @@ int n, m;
 void init()
 {
     cin >> n >> m;
+    for (int i = 0, a = 0; i < n; i++)
+    {
+        cin >> a;
+        input.push_back(a);
+    }
+    sort(input.begin(), input.end());
 }
 
 void solve(int cnt)
 {
     if (cnt == m)
     {
-        for (int i = 0, pre = 0; i < m; i++)
-        {
-            if (pre > arr[i])
-                return;
-            pre = arr[i];
-        }
         for (int i = 0; i < m; i++)
         {
             cout << arr[i] << " ";
@@ -31,14 +33,17 @@ void solve(int cnt)
         cout << "\n";
         return;
     }
-    for (int i = 1; i <= n; i++)
+    for (int i = 0, pre = 0; i < n; i++)
     {
+        if (pre == input[i])
+            continue;
         if (!visited[i])
         {
             visited[i] = true;
-            arr[cnt] = i;
+            arr[cnt] = input[i];
             solve(cnt + 1);
             visited[i] = false;
+            pre = input[i];
         }
     }
 }
