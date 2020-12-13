@@ -22,13 +22,10 @@ void init()
     {
         for (int j = 1; j < MAX; j++)
         {
-            for (int n = 1; n <= j; n++)
-            {
-                sum += apart[i - 1][n];
-            }
+            sum += apart[i - 1][j];
             apart[i][j] = sum;
-            sum = 0;
         }
+        sum = 0;
     }
     cin >> testCase;
     for (int i = 0; i < testCase; i++)
