@@ -5,6 +5,10 @@
         "vector": "cpp",
         "cmath": "cpp",
         "charconv": "cpp",
-        "cstring": "cpp"
+        "cstring": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
     }
 }
