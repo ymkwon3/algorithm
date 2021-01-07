@@ -1,13 +1,16 @@
 #include <iostream>
-#include <vector>
+#include <queue>
 
 using namespace std;
 
-vector<int> test(1, 0);
+priority_queue<int> test;
 
 int main(void)
 {
-    test[0]++;
-    cout << test[0] << "\n";
+    test.push(1);
+    test.push(5);
+    test.push(3);
+
+    cout << test.top();
     return 0;
 }
