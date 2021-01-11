@@ -1,64 +1,72 @@
 #include <iostream>
-#include <algorithm>
 #include <vector>
 
 using namespace std;
 
-vector<vector<int>> area;
-vector<int> h(257, 0);
+vector<int> area;
 int n, m, b;
-int many;
-int time = 0;
+int maximum = 0;
+int minimum = 1e9;
+int time = 1e9;
+int high = 0;
 void init()
 {
     int height;
     cin >> n >> m >> b;
-    for (int i = 0; i < n; i++)
+
+    for (int i = 0; i < n * m; i++)
     {
-        vector<int> element(m, 0);
-        area.push_back(element);
+        cin >> height;
+        area.push_back(height);
+        if (height > maximum)
+            maximum = height;
+        else if (height < minimum)
+            minimum = height;
     }
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            cin >> height;
-            area[i][j] = height;
-            h[height]++;
-        }
-    }
-    many = max_element(h.begin(), h.end()) - h.begin();
 }
 
-int fillUp(vector<vector<int>> a)
+void ExhaustiveSearch(int height)
 {
+    int t = 0;
     int inven = b;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n * m; i++)
     {
-        for (int j = 0; j < m; j++)
+        if (area[i] > height)
         {
-            if (a[i][j] != many)
+            t += (area[i] - height) * 2;
+            inven += area[i] - height;
+        }
+        else if (area[i] < height)
+        {
+            t += height - area[i];
+            inven -= height - area[i];
+        }
+    }
+    if (inven >= 0)
+    {
+        if (t < time)
+        {
+            high = height;
+            time = t;
+        }
+        else if (t == time)
+        {
+            if (high < height)
             {
-                inven += a[i][j] - many;
-                a[i][j] += a[i][j] - many;
-                time++;
+                high = height;
             }
         }
     }
-    return inven;
 }
 
 void solve()
 {
-    if (fillUp(area) < 0)
+    for (int i = minimum; i <= maximum; i++)
     {
-        time = 0;
-        // 인벤에 여분이 없고 더 쪼개야할 때를 해야함
+        ExhaustiveSearch(i);
     }
-    else
-    {
-        cout << many << " " << time << "\n";
-    }
+
+    cout << time << " " << high << "\n";
 }
 
 int main(void)
