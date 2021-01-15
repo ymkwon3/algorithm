@@ -7,9 +7,8 @@ vector<int> test;
 
 int main(void)
 {
-    string a = "bbb";
-    string b = "bbb";
+    int zero = 0, one = 0;
+    cout << zero << "\n";
 
-    cout << a.compare(b) << "\n";
     return 0;
 }

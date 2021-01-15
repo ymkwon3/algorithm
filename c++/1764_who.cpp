@@ -1,3 +1,7 @@
+/*
+used binary search
+*/
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
