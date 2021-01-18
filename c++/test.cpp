@@ -7,8 +7,7 @@ vector<int> test;
 
 int main(void)
 {
-    int zero = 0, one = 0;
-    cout << zero << "\n";
+    cout << 11 / 2 << "\n";
 
     return 0;
 }
