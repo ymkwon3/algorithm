@@ -7,6 +7,6 @@ vector<int> test;
 
 int main(void)
 {
-    cout << 6 / 3 * 2;
+    cout << test.size();
     return 0;
 }
