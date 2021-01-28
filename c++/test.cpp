@@ -1,13 +1,21 @@
 #include <iostream>
 #include <vector>
+#include <map>
+#include <typeinfo>
 
 using namespace std;
 
+map<int, int> testMap;
 vector<vector<int>> test(5);
 
 int main(void)
 {
-    test[1].push_back(8);
-    cout << test[2].size() << "\n";
+    auto a = 0;
+
+    cin >> a;
+    cout << typeid(a).name() << " " << a << "\n";
+
+    cin >> a;
+    cout << typeid(a).name() << " " << a << "\n";
     return 0;
 }
