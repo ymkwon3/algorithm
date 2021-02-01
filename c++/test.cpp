@@ -6,16 +6,23 @@
 using namespace std;
 
 map<int, int> testMap;
-vector<vector<int>> test(5);
+vector<vector<int>> test;
 
 int main(void)
 {
-    auto a = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        vector<int> e;
+        test.push_back(e);
+    }
+    test[0].push_back(3);
+    test[0].push_back(5);
+    test[1].push_back(1);
+    test[2].push_back(7);
 
-    cin >> a;
-    cout << typeid(a).name() << " " << a << "\n";
-
-    cin >> a;
-    cout << typeid(a).name() << " " << a << "\n";
+    cout << test[0][0] << "\n";
+    cout << test[0][1] << "\n";
+    cout << test[1][0] << "\n";
+    cout << test[2][0] << "\n";
     return 0;
 }
