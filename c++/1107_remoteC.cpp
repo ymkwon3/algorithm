@@ -4,6 +4,13 @@
 현재채널 100
 이동하고자하는채널 n
 고장난버트의개수 m
+
+처음에는 if문 엄청 넣으면서 n이 9990 일 경우 버튼이 고장나지 않은 최소의 값 최대의 값을 각각 넣어보며 최소로 비슷한값 최대로 비슷한값을 구해서
+노가다로 했는데 결국 실패...
+
+100
+10
+0 1 2 3 4 5 6 7 8 9 
 */
 #include <iostream>
 #include <vector>
@@ -11,168 +18,62 @@
 
 using namespace std;
 
-vector<int> x(10, 1);
+vector<bool> broken(10);
 vector<int> num;
-int n, m, vs = 10, vb = -1, channel = 100; // vs : 조작 가능한 버튼중 가장 작은 수, vb : 조작 가능한 버튼중 가장 큰 수
+int n, m, channel = 100; // vs : 조작 가능한 버튼중 가장 작은 수, vb : 조작 가능한 버튼중 가장 큰 수
 int result = 0;
 
-int digitLen(int len)
+int isPossible(int value)
 {
-    if (len == 0)
-        return 1;
-    int ans = 0;
-    while (len)
+    int test = value;
+    int len = 0, sub = abs(value - n);
+    int channelSub = abs(n - channel);
+    if (value == 0)
     {
-        len /= 10;
-        ans++;
+        len = 1;
+        if (broken[0])
+            return -1;
     }
-    return ans;
+    while (value)
+    {
+        if (broken[value % 10])
+            return -1;
+        value /= 10;
+        len++;
+    }
+    return min(sub + len, channelSub);
 }
 
-void setNum()
-{
-    int temp = n;
-    if (temp == 0)
-    {
-        num.push_back(0);
-    }
-    while (temp != 0)
-    {
-        num.push_back(temp % 10);
-        temp /= 10;
-    }
-}
-
-int po(int a)
+int po(int a) // pow() 쓰니까 가끔 9999처럼 1 적은 상태로나와서 그냥 만듬...
 {
     if (a == 0)
-        return 1;
+        return 10;
+    int ans = 0;
+    while (a)
+    {
+        a /= 10;
+        ans++;
+    }
     int ret = 1;
-    for (int i = 0; i < a; i++)
+    for (int i = 0; i < ans; i++)
     {
         ret *= 10;
     }
     return ret;
 }
 
-int cmpBigger()
-{
-    int tmp = 0;
-    int number;
-    bool change = false;
-    for (int i = num.size() - 1; i >= 0; i--)
-    {
-        number = 10;
-        if (!change)
-        {
-            for (int j = 9; j >= num[i]; j--)
-            {
-                if (i == num.size() - 1 && num[i] == 9)
-                {
-                    number = vs;
-                    if (vs == 0)
-                        tmp += (vs + 1) * po(i + 1);
-                    else
-                        tmp += vs * po(i + 1);
-                }
-                else if (num[i] == 9)
-                {
-                    number = vs;
-                    if (x[(tmp / po(i + 1)) + 1])
-                        tmp += po(i + 1);
-                }
-                if (x[j] && number >= j)
-                    number = j;
-            }
-            if (number != num[i])
-                change = true;
-            if (number != 10)
-                tmp += number * po(i);
-        }
-        else
-        {
-            tmp += vs * po(i);
-        }
-        cout << "tmpB :: " << tmp << "\n";
-    }
-    return tmp;
-}
-
-int cmpSmaller()
-{
-    int tmp = 0;
-    int number;
-    bool change = false;
-    for (int i = num.size() - 1; i >= 0; i--)
-    {
-        number = -1;
-        if (!change)
-        {
-            for (int j = 0; j <= num[i]; j++)
-            {
-                if (num[i] == 0)
-                {
-                    number = vb;
-                    if (x[(tmp / po(i + 1)) - 1] || tmp / po(i + 1) - 1 == 0)
-                        tmp -= po(i + 1);
-                }
-                if (x[j] && number <= j)
-                    number = j;
-            }
-            if (number != num[i])
-                change = true;
-            if (number != -1)
-                tmp += number * po(i);
-        }
-        else
-        {
-            tmp += vb * po(i);
-        }
-        cout << "tmpS :: " << tmp << "\n";
-    }
-    return tmp;
-}
-
 void solve()
 {
-    int big, small, sub, bans, sans;
-    if (n == channel)
+    int mini = -1;
+    for (int i = 0; i <= po(n); i++)
     {
-        cout << 0 << "\n";
-        return;
+        int temp = isPossible(i);
+        if (mini == -1 && temp != -1)
+            mini = temp;
+        else if (temp != -1 && temp < mini)
+            mini = temp;
     }
-    else if (m == 10)
-    {
-        cout << abs(channel - n) << "\n";
-        return;
-    }
-    else if (n == 0)
-    {
-        if (!x[0])
-            cout << vs + 1 << "\n";
-        else
-            cout << 1 << "\n";
-        return;
-    }
-
-    big = cmpBigger();
-    small = cmpSmaller();
-    sub = abs(100 - n);
-    bans = abs(n - big) + digitLen(big);
-    sans = abs(n - small) + digitLen(small);
-    if (big == 0)
-    {
-        cout << min(sans, sub) << "\n";
-        return;
-    }
-    else if (small == 0)
-    {
-        cout << min(bans, sub) << "\n";
-        return;
-    }
-    else
-        cout << min(min(bans, sans), sub) << "\n";
-    return;
+    cout << mini << "\n";
 }
 
 int main(void)
@@ -184,19 +85,8 @@ int main(void)
     for (int i = 0; i < m; i++)
     {
         cin >> a;
-        x[a] = 0;
+        broken[a] = true;
     }
-    for (int i = 0; i < 10; i++)
-    {
-        if (x[i] == 1)
-        {
-            if (i < vs)
-                vs = i;
-            if (i > vb)
-                vb = i;
-        }
-    }
-    setNum();
     solve();
     return 0;
 }
