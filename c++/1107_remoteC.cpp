@@ -8,9 +8,7 @@
 처음에는 if문 엄청 넣으면서 n이 9990 일 경우 버튼이 고장나지 않은 최소의 값 최대의 값을 각각 넣어보며 최소로 비슷한값 최대로 비슷한값을 구해서
 노가다로 했는데 결국 실패...
 
-100
-10
-0 1 2 3 4 5 6 7 8 9 
+이 문제만 3일 걸렸다.....분발하자!
 */
 #include <iostream>
 #include <vector>
@@ -20,7 +18,7 @@ using namespace std;
 
 vector<bool> broken(10);
 vector<int> num;
-int n, m, channel = 100; // vs : 조작 가능한 버튼중 가장 작은 수, vb : 조작 가능한 버튼중 가장 큰 수
+int n, m, channel = 100;
 int result = 0;
 
 int isPossible(int value)
@@ -55,7 +53,7 @@ int po(int a) // pow() 쓰니까 가끔 9999처럼 1 적은 상태로나와서 �
         ans++;
     }
     int ret = 1;
-    for (int i = 0; i < ans; i++)
+    for (int i = 0; i < ans + 1; i++)
     {
         ret *= 10;
     }
@@ -64,6 +62,11 @@ int po(int a) // pow() 쓰니까 가끔 9999처럼 1 적은 상태로나와서 �
 
 void solve()
 {
+    if (m == 10)
+    {
+        cout << abs(n - channel) << "\n";
+        return;
+    }
     int mini = -1;
     for (int i = 0; i <= po(n); i++)
     {
