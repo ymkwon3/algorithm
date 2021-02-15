@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ string sum(string a, string b)
 {
     string bigger, smaller, result = "";
     int carry = 0;
-    if (a > b)
+    if (a.size() >= b.size())
     {
         bigger = a;
         smaller = b;
@@ -26,14 +27,24 @@ string sum(string a, string b)
     }
     reverse(bigger.begin(), bigger.end());
     reverse(smaller.begin(), smaller.end());
-
     for (int i = 0; i < smaller.size(); i++)
     {
         int s1 = smaller[i] - '0';
         int b1 = bigger[i] - '0';
-        result.push_back(to_string((s1 + b1) % 10 + carry));
-        carry = (s1 + b1) / 10;
+        result.push_back(static_cast<char>((s1 + b1 + carry) % 10 + '0'));
+        carry = (s1 + b1 + carry) / 10;
     }
+    for (int i = smaller.size(); i < bigger.size(); i++)
+    {
+        int b1 = bigger[i] - '0';
+        result.push_back(static_cast<char>((b1 + carry) % 10 + '0'));
+        carry = (b1 + carry) / 10;
+    }
+
+    if (carry != 0)
+        result.push_back(static_cast<char>(carry + '0'));
+
+    reverse(result.begin(), result.end());
 
     return result;
 }
