@@ -1,45 +1,29 @@
+/*
+어떠한 방식으로 풀어야 하는지에 대한 차이는 유사했지만
+원래의 풀이 방식은 점화식 도출이 조금 부족했다.
+*/
+
 #include <iostream>
 
 using namespace std;
 
-int sticker[2][111111];
+int sticker[2][100001];
+int dp[2][100001];
 int testcase, n;
 
-int solve(int start)
+void solve()
 {
-    int tmp, currentT = 2, reverseT = 2, prev = 0, next = 0, sum = 0;
-    currentT = start;
-    start == 0 ? reverseT = 1 : reverseT = 0;
-    sum += sticker[start][0];
-    prev = sticker[start][0];
-    if (n - 2 > 0)
-        next = sticker[start][2];
-    else
-        next = 0;
-    for (int i = 1; i < n; i++)
+    dp[0][0] = sticker[0][0];
+    dp[1][0] = sticker[1][0];
+    dp[0][1] = sticker[0][1] + dp[1][0];
+    dp[1][1] = sticker[1][1] + dp[0][0];
+    for (int i = 2; i < n; i++)
     {
-        if (prev + sticker[reverseT][i] + next <= sticker[currentT][i])
-        {
-            sum -= prev;
-            sum += sticker[currentT][i];
-            prev = sticker[currentT][i];
-            if (i < n - 2)
-                next = sticker[currentT][i + 2];
-            else
-                next = 0;
-            continue;
-        }
-        sum += sticker[reverseT][i];
-        prev = sticker[reverseT][i];
-        if (i < n - 2)
-            next = sticker[reverseT][i + 2];
-        else
-            next = 0;
-        tmp = currentT;
-        currentT = reverseT;
-        reverseT = tmp;
+        dp[0][i] = sticker[0][i] + max(dp[1][i - 1], dp[1][i - 2]);
+        dp[1][i] = sticker[1][i] + max(dp[0][i - 1], dp[0][i - 2]);
     }
-    return sum;
+
+    cout << max(dp[0][n - 1], dp[1][n - 1]) << "\n";
 }
 
 int main(void)
@@ -56,8 +40,7 @@ int main(void)
             for (int k = 0; k < n; k++)
                 cin >> sticker[j][k];
         }
-        int result = max(solve(0), solve(1));
-        cout << result << "\n";
+        solve();
     }
 
     return 0;
