@@ -9,8 +9,9 @@ using namespace std;
 map<int, vector<int>> m;
 int main(void)
 {
-    m[1].push_back(1);
-    m[1].push_back(6);
-    cout << m[1][1] << "\n";
+    unsigned long long a = 7;
+    unsigned long long b = 2;
+
+    cout << a / b << "\n";
     return 0;
 }
