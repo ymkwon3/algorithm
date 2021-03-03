@@ -12,13 +12,13 @@ vector<int>::iterator iter = v.begin();
 
 int main(void)
 {
-    v.push_back(0);
-    v.push_back(1);
-    v.push_back(2);
-    v.push_back(3);
-
-    v.erase(iter + 1);
-    for (int i = 0; i < v.size(); i++)
-        cout << v[i] << "\n";
+    int a;
+    while (true)
+    {
+        cin >> a;
+        if (cin.eof() == true)
+            break;
+        cout << a << "\n";
+    }
     return 0;
 }
