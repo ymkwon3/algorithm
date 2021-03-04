@@ -3,6 +3,8 @@
         "iostream": "cpp",
         "hash_map": "cpp",
         "vector": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "ios": "cpp",
+        "map": "cpp"
     }
 }

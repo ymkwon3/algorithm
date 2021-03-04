@@ -9,16 +9,12 @@ using namespace std;
 map<int, vector<int>> m;
 vector<int> v;
 vector<int>::iterator iter = v.begin();
-
+int g[100] = {
+    -1,
+};
 int main(void)
 {
-    int a;
-    while (true)
-    {
-        cin >> a;
-        if (cin.eof() == true)
-            break;
-        cout << a << "\n";
-    }
+
+    cout << g[5] << "\n";
     return 0;
 }
