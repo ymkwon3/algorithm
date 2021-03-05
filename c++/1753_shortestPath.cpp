@@ -9,19 +9,24 @@ vector<pair<int, int>> inputMap[20001];
 
 void dijkstra()
 {
-    queue<int> que;
-    que.push(K);
-    while (!que.empty())
+    priority_queue<pair<int, int>> pq;
+    pq.push(make_pair(0, K));
+    graph[K] = 0;
+    while (!pq.empty())
     {
-        for (int i = 0; i < inputMap[que.front()].size(); i++)
+        int cost = -pq.top().first;
+        int cur = pq.top().second;
+        pq.pop();
+        for (int i = 0; i < inputMap[cur].size(); i++)
         {
-            if (graph[inputMap[que.front()][i].first] == 0 || graph[inputMap[que.front()][i].first] > graph[que.front()] + inputMap[que.front()][i].second)
+            int next = inputMap[cur][i].first;
+            int nCost = inputMap[cur][i].second;
+            if (graph[next] == 0 || graph[next] > cost + nCost)
             {
-                graph[inputMap[que.front()][i].first] = graph[que.front()] + inputMap[que.front()][i].second;
-                que.push(inputMap[que.front()][i].first);
+                graph[next] = cost + nCost;
+                pq.push(make_pair(-graph[next], next));
             }
         }
-        que.pop();
     }
 }
 
