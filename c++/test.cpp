@@ -9,12 +9,14 @@ using namespace std;
 map<int, vector<int>> m;
 vector<int> v;
 vector<int>::iterator iter = v.begin();
-int g[100] = {
-    -1,
-};
+priority_queue<pair<int, int>> pq;
 int main(void)
 {
-
-    cout << g[5] << "\n";
+    pq.push(make_pair(0, 1));
+    pq.push(make_pair(1, 1));
+    pq.push(make_pair(2, 1));
+    pq.push(make_pair(3, 1));
+    int cost = -pq.top().first;
+    cout << cost << "\n";
     return 0;
 }
