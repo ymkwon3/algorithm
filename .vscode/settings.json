@@ -8,6 +8,7 @@
         "map": "cpp",
         "queue": "cpp",
         "stack": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "ostream": "cpp"
     }
 }
