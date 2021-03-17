@@ -7,15 +7,12 @@
 #include <string>
 
 using namespace std;
-map<int, vector<int>> m;
-vector<int> v;
-vector<int>::iterator iter = v.begin();
-priority_queue<pair<int, int>> pq;
+vector<vector<int>> v(5);
 int main(void)
 {
-    string a = "test";
-    string b = "tssw";
-    int g = a.find(b[3]);
-    cout << g << "\n";
+    v[3].push_back(1);
+    v[3].push_back(2);
+    v[3].push_back(3);
+    cout << v[3][1];
     return 0;
 }
