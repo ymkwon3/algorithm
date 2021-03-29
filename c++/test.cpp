@@ -7,12 +7,10 @@
 #include <string>
 
 using namespace std;
-vector<vector<int>> v(5);
+int ttt[5];
 int main(void)
 {
-    v[3].push_back(1);
-    v[3].push_back(2);
-    v[3].push_back(3);
-    cout << v[3][1];
-    return 0;
+    fill_n(ttt, 5, -1);
+    cout << ttt[2]
+;    return 0;
 }
