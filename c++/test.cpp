@@ -7,10 +7,15 @@
 #include <string>
 
 using namespace std;
-int ttt[5];
+
+vector<vector<int>> v;
+
 int main(void)
 {
-    fill_n(ttt, 5, -1);
-    cout << ttt[2]
-;    return 0;
+    vector<int> a(4, 1);
+    v.push_back(a);
+    v.push_back(a);
+
+    cout << v.size() << "\n";
+    return 0;
 }
