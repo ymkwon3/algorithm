@@ -8,14 +8,13 @@
 
 using namespace std;
 
-vector<vector<int>> v;
-
+map<string, int> m;
 int main(void)
 {
-    vector<int> a(4, 1);
-    v.push_back(a);
-    v.push_back(a);
+    m["h"] = 2;
 
-    cout << v.size() << "\n";
+
+    cout << m["h"];
+
     return 0;
 }

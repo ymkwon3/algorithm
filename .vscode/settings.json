@@ -9,6 +9,8 @@
         "queue": "cpp",
         "stack": "cpp",
         "utility": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "xstring": "cpp",
+        "algorithm": "cpp"
     }
 }
