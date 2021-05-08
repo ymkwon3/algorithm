@@ -8,13 +8,17 @@
 
 using namespace std;
 
-map<string, int> m;
+vector<bool> v;
 int main(void)
 {
-    m["h"] = 2;
+    v.push_back(true);
+    v.push_back(true);
+    v.push_back(true);
+    v.push_back(true);
+    v.push_back(false);
+    v.push_back(false);
 
-
-    cout << m["h"];
+    cout << count(v.at(0), v.end(), true);
 
     return 0;
 }

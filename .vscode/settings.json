@@ -11,6 +11,8 @@
         "utility": "cpp",
         "ostream": "cpp",
         "xstring": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "xtree": "cpp",
+        "typeinfo": "cpp"
     }
 }
