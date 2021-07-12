@@ -5,20 +5,30 @@
 #include <typeinfo>
 #include <queue>
 #include <string>
+#include <cstdlib>
 
 using namespace std;
+const int COUNT = 100;
 
-vector<bool> v;
+vector<vector<int>> a;
 int main(void)
 {
-    v.push_back(true);
-    v.push_back(true);
-    v.push_back(true);
-    v.push_back(true);
-    v.push_back(false);
-    v.push_back(false);
-
-    cout << count(v.at(0), v.end(), true);
+    int num;
+    double cnt10 = 0, cnt90 = 0;
+    for (int i = 0; i < COUNT; i++)
+    {
+        num = rand() % 10;
+        if (num == 0)
+        {
+            cnt10++;
+        }
+        else
+        {
+            cnt90++;
+        }
+    }
+    cout << "10 : " << (cnt10 / COUNT) << "\n";
+    cout << "90 : " << (cnt90 / COUNT) << "\n";
 
     return 0;
 }
