@@ -10,7 +10,6 @@ function solution(d, budget) {
     if (a < b) return -1;
     return 0;
   });
-  console.log(d);
   for (let val of d) {
     budget -= val;
     if (budget < 0) {
@@ -18,6 +17,5 @@ function solution(d, budget) {
     }
     answer++;
   }
-  console.log(answer, budget);
   return answer;
 }
