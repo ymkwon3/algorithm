@@ -6,7 +6,6 @@ function solution(a, b) {
   for (let i in a) {
     answer += a[i] * b[i];
   }
-  console.log(answer);
   return answer;
 }
 solution(a, b);
