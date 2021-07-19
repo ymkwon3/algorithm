@@ -30,7 +30,6 @@ function solution(n, lost, reserve) {
   for (let val of student) {
     if (val > 0) answer++;
   }
-  console.log(student, answer);
   return answer;
 }
 
