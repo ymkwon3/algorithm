@@ -10,6 +10,5 @@ function solution(arr) {
       pre = val;
     }
   }
-  console.log(answer);
   return answer;
 }
