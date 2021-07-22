@@ -10,7 +10,6 @@ function solution(a, b) {
     a = b;
     b = tmp;
   }
-  console.log(a, b);
   for (let i = a; i <= b; i++) {
     answer += i;
   }
