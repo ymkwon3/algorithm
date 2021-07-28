@@ -1,8 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        기능개발 sol = new 기능개발();
-        int[] progresses = { 93, 30, 55 };
-        int[] speeds = { 1, 30, 5 };
-        sol.solution(progresses, speeds);
+        가장큰수 sol = new 가장큰수();
+        int[] numbers = { 41, 412 };
+        sol.solution(numbers);
     }
 }
