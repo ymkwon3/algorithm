@@ -1,8 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        행렬의곱셈 sol = new 행렬의곱셈();
-        int[][] arr1 = { { 1, 4 }, { 3, 2 }, { 4, 1 } };
-        int[][] arr2 = { { 3, 3 }, { 3, 3 } };
-        sol.solution(arr1, arr2);
+        JadenCase문자열만들기 sol = new JadenCase문자열만들기();
+        String s = "far";
+        sol.solution(s);
     }
 }
