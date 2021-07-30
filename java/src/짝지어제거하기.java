@@ -6,7 +6,6 @@ public class 짝지어제거하기 {
         Stack<Character> stack = new Stack<Character>();
         stack.push(s.charAt(0));
         for (int i = 1; i < s.length(); i++) {
-            System.out.println(" size : " + stack.size());
             if (!stack.empty() && s.charAt(i) == stack.peek()) {
                 stack.pop();
                 continue;
