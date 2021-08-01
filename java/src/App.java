@@ -1,7 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        숫자의표현 sol = new 숫자의표현();
-        int n = 15;
+        다음큰숫자 sol = new 다음큰숫자();
+        int n = 78;
         sol.solution(n);
     }
 }
