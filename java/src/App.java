@@ -1,7 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        다음큰숫자 sol = new 다음큰숫자();
-        int n = 78;
-        sol.solution(n);
+        최댓값과최솟값 sol = new 최댓값과최솟값();
+        String s = "-10 -11 11 10 -21 -9";
+        sol.solution(s);
     }
 }
