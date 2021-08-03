@@ -1,7 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        최댓값과최솟값 sol = new 최댓값과최솟값();
-        String s = "-10 -11 11 10 -21 -9";
-        sol.solution(s);
+        땅따먹기 sol = new 땅따먹기();
+        int[][] land = { { 1, 2, 4, 5 }, { 2, 3, 4, 8 }, { 4, 3, 2, 1 } };
+        sol.solution(land);
     }
 }
