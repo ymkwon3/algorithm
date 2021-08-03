@@ -1,7 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        주식가격 sol = new 주식가격();
-        int[] prices = { 3, 5, 5, 4, 1 };
-        sol.solution(prices);
+        올바른괄호 sol = new 올바른괄호();
+        String s = "(((())";
+        sol.solution(s);
     }
 }
