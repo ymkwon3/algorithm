@@ -1,7 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        땅따먹기 sol = new 땅따먹기();
-        int[][] land = { { 1, 2, 4, 5 }, { 2, 3, 4, 8 }, { 4, 3, 2, 1 } };
-        sol.solution(land);
+        가장큰정사각형찾기 sol = new 가장큰정사각형찾기();
+        int[][] board = { { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 0, 1, 1, 1, 1 } };
+        sol.solution(board);
     }
 }
