@@ -21,8 +21,6 @@ public class 올바른괄호 {
         }
         if (!stack.isEmpty())
             answer = false;
-        System.out.println(answer);
-
         return answer;
     }
 }
