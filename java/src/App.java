@@ -1,7 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        올바른괄호 sol = new 올바른괄호();
-        String s = "(((())";
-        sol.solution(s);
+        영어끝말잇기 sol = new 영어끝말잇기();
+        String[] words = { "hello", "one", "even", "never", "now", "world", "draw" };
+        sol.solution(2, words);
     }
 }
