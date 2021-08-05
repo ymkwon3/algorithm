@@ -14,7 +14,6 @@ public class 다리를지나는트럭 {
         }
         while (true) {
             answer++;
-            System.out.println(q);
 
             if (!truck.isEmpty() && weight >= currentWeight + truck.peek()) {
                 q.add(truck.peek());
