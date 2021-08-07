@@ -10,7 +10,6 @@ public class 카카오프렌즈컬러링북 {
             for (int j = 0; j < n; j++) {
                 if (!visit[i][j] && picture[i][j] != 0) {
                     int tmp = dfs(i, j, picture);
-                    System.out.println("i: " + i + " j: " + j + " maxSizeOfOneArea: " + tmp);
                     maxSizeOfOneArea = maxSizeOfOneArea < tmp ? tmp : maxSizeOfOneArea;
                     numberOfArea++;
                 }
@@ -20,7 +19,6 @@ public class 카카오프렌즈컬러링북 {
         int[] answer = new int[2];
         answer[0] = numberOfArea;
         answer[1] = maxSizeOfOneArea;
-        System.out.println(numberOfArea + " " + maxSizeOfOneArea);
         return answer;
     }
 
