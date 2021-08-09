@@ -16,6 +16,7 @@ public class 방문길이 {
             this.y2 = y2;
         }
 
+        // 사용자 클래스를 set으로 하려면 오버라이딩을 해줘야함
         public int hashCode() {
             return (Integer.toString(x1) + Integer.toString(y1) + Integer.toString(x2) + Integer.toString(y2))
                     .hashCode();
