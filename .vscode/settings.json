@@ -13,6 +13,7 @@
         "xstring": "cpp",
         "algorithm": "cpp",
         "xtree": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "string": "cpp"
     }
 }
