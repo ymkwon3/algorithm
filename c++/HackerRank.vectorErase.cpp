@@ -18,12 +18,6 @@ int main()
     }
     cin >> tmp;
     arr.erase(arr.begin() + tmp - 1);
-    cout << "!!!!!!!!!!!!\n";
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << "!!!!!!!!!!!!\n";
     cin >> start >> end;
     arr.erase(arr.begin() + start - 1, arr.begin() + end - 1);
     cout << arr.size() << "\n";
