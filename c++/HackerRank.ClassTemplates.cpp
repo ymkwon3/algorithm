@@ -65,7 +65,7 @@ int main()
             string element1, element2;
             cin >> element1 >> element2;
             AddElements<string> mystring(element1);
-            cout << mystring.add(element2) << endl;
+            cout << mystring.concatenate(element2) << endl;
         }
     }
     return 0;
