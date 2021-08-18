@@ -9,13 +9,13 @@ class Matrix
 {
 public:
     vector<vector<int>> a;
-    // 생성자 오버로드
+    // 생성자 오버로딩
     Matrix(){};
     Matrix(vector<vector<int>> v) : a(v){};
     Matrix operator+(Matrix &m);
 };
 
-// 연산자 오버로드
+// 연산자 오버로딩
 Matrix Matrix::operator+(Matrix &m)
 {
     for (int i = 0; i < a.size(); i++)
