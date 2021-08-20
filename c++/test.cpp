@@ -11,10 +11,8 @@ using namespace std;
 
 int main(void)
 {
-    string tmp;
-    getline(cin, tmp);
-    getline(cin, tmp);
-    cout << tmp << "\n";
-
+    vector<int> i = {1, 0, 0};
+    vector<int> j = i;
+    cout << j[0] << j[1] << j[2] << "\n";
     return 0;
 }
