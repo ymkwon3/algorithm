@@ -11,8 +11,7 @@ using namespace std;
 
 int main(void)
 {
-    vector<int> i = {1, 0, 0};
-    vector<int> j = i;
-    cout << j[0] << j[1] << j[2] << "\n";
+    int a = stoi("123");
+    cout << a << "\n";
     return 0;
 }
