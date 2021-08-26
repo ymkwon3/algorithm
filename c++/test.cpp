@@ -11,8 +11,9 @@ using namespace std;
 
 int main(void)
 {
-    string a = "abcde";
-    a = a.substr(1);
-    cout << a << "\n";
+    vector<int> a = {1, 2, 3, 4, 5, 6, 7, 8};
+    a.erase(a.begin());
+    for (auto i : a)
+        cout << i << " ";
     return 0;
 }
