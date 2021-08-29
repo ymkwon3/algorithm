@@ -47,7 +47,7 @@ int solution(vector<int> people, int limit)
 
 int main(void)
 {
-    vector<int> p = {50, 70, 80};
-    solution(p, 100);
+    vector<int> p = {50, 100, 100, 150, 200};
+    solution(p, 200);
     return 0;
 }
