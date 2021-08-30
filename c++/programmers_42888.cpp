@@ -28,7 +28,6 @@ vector<string> solution(vector<string> record)
     for (string value : record)
     {
         vector<string> tmp = split(value);
-        cout << tmp[0] << "\n";
         if (tmp[0] == "Enter" || tmp[0] == "Change")
         {
             cout << tmp[1] << " " << tmp[2] << "\n";

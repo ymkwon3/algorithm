@@ -24,7 +24,7 @@ int gcd(int a, int b)
 long long solution(int w, int h)
 {
     int g = gcd(w, h);
-    return (w + h - 1) * g;
+    return (w / g + h / g - 1) * g;
 }
 
 int main()
