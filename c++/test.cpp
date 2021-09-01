@@ -11,8 +11,7 @@ using namespace std;
 
 int main(void)
 {
-    string a = "abcde";
-    a = a.substr(0, 4);
-    cout << a << "\n";
+    string a = "SI", b = "PORTAL";
+    cout << (a > b ? b : a) << "\n";
     return 0;
 }
