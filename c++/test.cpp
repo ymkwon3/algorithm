@@ -11,8 +11,7 @@ using namespace std;
 
 int main(void)
 {
-    string a = "abcde";
-    string b = a.substr(2, a.size());
-    cout << a.substr(0, 2) << " " << b << "\n";
+    int i = 1;
+    cout << i - stoi("5");
     return 0;
 }

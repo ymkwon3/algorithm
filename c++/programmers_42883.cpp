@@ -29,7 +29,6 @@ string solution(string number, int k)
         k -= maxIdx;
     }
     answer = is ? answer : answer + number;
-    cout << answer << "\n";
     return answer;
 }
 
