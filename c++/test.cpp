@@ -11,7 +11,8 @@ using namespace std;
 
 int main(void)
 {
-    string a = "SI", b = "PORTAL";
-    cout << (a > b ? b : a) << "\n";
+    string a = "abcde";
+    string b = a.substr(2, a.size());
+    cout << a.substr(0, 2) << " " << b << "\n";
     return 0;
 }
