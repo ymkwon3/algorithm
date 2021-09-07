@@ -11,8 +11,7 @@ using namespace std;
 
 int main(void)
 {
-    string s = "abcde";
-    s[0] = '1';
-    cout << s;
+    int a = 1, b = 2;
+    cout << (double)a / (double)b << "\n";
     return 0;
 }
