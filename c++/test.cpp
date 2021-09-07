@@ -11,7 +11,8 @@ using namespace std;
 
 int main(void)
 {
-    int i = 1;
-    cout << i - stoi("5");
+    string s = "abcde";
+    s[0] = '1';
+    cout << s;
     return 0;
 }
