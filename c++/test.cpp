@@ -6,12 +6,15 @@
 #include <queue>
 #include <string>
 #include <cstdlib>
+#include <set>
 
 using namespace std;
 
 int main(void)
 {
-    int a = 1, b = 2;
-    cout << (double)a / (double)b << "\n";
+    string a = "a";
+    string b = "b";
+    a += b + "/";
+    cout << a;
     return 0;
 }
