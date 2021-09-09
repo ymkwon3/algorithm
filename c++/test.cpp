@@ -12,9 +12,7 @@ using namespace std;
 
 int main(void)
 {
-    string a = "a";
-    string b = "b";
-    a += b + "/";
-    cout << a;
+    int n = 4;
+    cout << (n == 1) ? "one\n" : "four\n";
     return 0;
 }
