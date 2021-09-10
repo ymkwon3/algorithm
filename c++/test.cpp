@@ -12,7 +12,10 @@ using namespace std;
 
 int main(void)
 {
-    int n = 4;
-    cout << (n == 1) ? "one\n" : "four\n";
+    double i = 1;
+    double z = 3;
+    cout << fixed;
+    cout.precision(6);
+    cout << i / z;
     return 0;
 }
