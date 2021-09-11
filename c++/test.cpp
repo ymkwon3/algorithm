@@ -9,47 +9,21 @@
 #include <set>
 
 using namespace std;
-
-void vectorLeftShift(vector<int> &v)
+int calc(string a, string b)
 {
-    int pre = v[v.size() - 1];
-    int tmp;
-    for (int i = v.size() - 2; i >= 0; i--)
+    int aH = stoi(a.substr(0, 2)), aM = stoi(a.substr(3, 2));
+    int bH = stoi(b.substr(0, 2)), bM = stoi(b.substr(3, 2));
+    if (bM > aM)
     {
-        tmp = v[i];
-        v[i] = pre;
-        pre = tmp;
-        if (i == 0)
-        {
-            v[v.size() - 1] = pre;
-        }
+        aH--;
+        aM += 60;
     }
+    return (aH - bH) * 60 + (aM - bM);
 }
-
-void vectorRightShift(vector<int> &v)
-{
-    int pre = v[0];
-    int tmp;
-    for (int i = 1; i < v.size(); i++)
-    {
-        tmp = v[i];
-        v[i] = pre;
-        pre = tmp;
-        if (i == v.size() - 1)
-        {
-            v[0] = pre;
-        }
-    }
-}
-
 int main(void)
 {
-    vector<int> v = {1, 2, 3, 4, 5};
-    vectorLeftShift(v);
-    vectorRightShift(v);
-    for (int i : v)
-    {
-        cout << i << " ";
-    }
+    string s = "23:59 06:05 77:77";
+    s = s.substr(12);
+    cout << s;
     return 0;
 }
