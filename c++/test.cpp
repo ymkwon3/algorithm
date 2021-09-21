@@ -12,8 +12,9 @@ using namespace std;
 
 int main(void)
 {
-    map<char, int> m;
-    m[65] = 1;
-    cout << m['A'] << "\n";
+    string b = "abcde";
+    string a = "";
+    a += b[0], a += b[1];
+    cout << a << "\n";
     return 0;
 }
