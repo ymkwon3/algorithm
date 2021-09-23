@@ -12,9 +12,7 @@ using namespace std;
 
 int main(void)
 {
-    string b = "abcde";
-    string a = "";
-    a += b[0], a += b[1];
-    cout << a << "\n";
+    vector<pair<int, int>> v[2];
+    cout << v[0][0].first;
     return 0;
 }
