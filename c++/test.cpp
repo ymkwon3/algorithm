@@ -12,7 +12,6 @@ using namespace std;
 
 int main(void)
 {
-    vector<pair<int, int>> v[2];
-    cout << v[0][0].first;
+    cout << 20 % 10;
     return 0;
 }
