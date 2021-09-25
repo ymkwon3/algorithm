@@ -12,6 +12,12 @@ using namespace std;
 
 int main(void)
 {
-    cout << 20 % 10;
-    return 0;
+    int a = 1;
+    int b = 10;
+    while (a < b)
+    {
+        cout << a << " " << b << "\n";
+        a += 2;
+        b++;
+    }
 }
