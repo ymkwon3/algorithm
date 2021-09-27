@@ -12,12 +12,5 @@ using namespace std;
 
 int main(void)
 {
-    int a = 1;
-    int b = 10;
-    while (a < b)
-    {
-        cout << a << " " << b << "\n";
-        a += 2;
-        b++;
-    }
+    cout << 23 / 2 << "\n";
 }

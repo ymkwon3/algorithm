@@ -16,14 +16,6 @@ int main(void)
             v[i][j] = v[i][j - 1] + v[i - 1][j - 1];
         }
     }
-    for (int i = 0; i < v[0].size(); i++)
-    {
-        for (int j = 0; j < v[0].size(); j++)
-        {
-            cout << v[i][j] << " ";
-        }
-        cout << "\n";
-    }
     int t;
     cin >> t;
     for (int i = 0; i < t; i++)
