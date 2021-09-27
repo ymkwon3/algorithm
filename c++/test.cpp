@@ -12,5 +12,6 @@ using namespace std;
 
 int main(void)
 {
-    cout << 23 / 2 << "\n";
+    vector<int> v;
+    cout << v.size() << "\n";
 }
