@@ -10,8 +10,40 @@
 
 using namespace std;
 
-int main(void)
+long long Combination(int n, int r)
 {
-    vector<int> v;
-    cout << v.size() << "\n";
+    int p = 1;
+    int c = 1;
+    while (r > 0)
+    {
+        c *= n--;
+        p *= r--;
+    }
+    return c / p;
 }
+
+int main()
+{
+    int n, m, k;
+
+    cin >> n >> m >> k;
+
+    double res = 0.0;
+    double p = Combination(n, m);
+    while (m >= k)
+    {
+        if (n - m < m - k)
+        {
+            k++;
+            continue;
+        }
+
+        double c = Combination(m, k) * Combination(n - m, m - k);
+
+        res += c / p;
+        k++;
+    }
+    printf("%.16f", res);
+    return 0;
+}
+// 6 2 1
