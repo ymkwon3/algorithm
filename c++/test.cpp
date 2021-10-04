@@ -12,9 +12,12 @@ using namespace std;
 
 int main()
 {
-    string s = "bca";
-    sort(s.begin(), s.end());
-    cout << s << "\n";
+    string s = "abcde";
+    for (int i = 0; i < s.size(); i++)
+    {
+        s = s.substr(1) + s[0];
+        cout << s << "\n";
+    }
     return 0;
 }
 // 6 2 1
