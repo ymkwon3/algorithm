@@ -12,12 +12,13 @@ using namespace std;
 
 int main()
 {
-    string s = "abcde";
-    for (int i = 0; i < s.size(); i++)
+    int n = 6;
+    string tmp = "";
+    while (n != 0)
     {
-        s = s.substr(1) + s[0];
-        cout << s << "\n";
+        tmp = to_string(n % 2) + tmp;
+        n /= 2;
     }
+    cout << tmp;
     return 0;
 }
-// 6 2 1
