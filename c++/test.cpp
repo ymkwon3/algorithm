@@ -12,13 +12,8 @@ using namespace std;
 
 int main()
 {
-    int n = 6;
-    string tmp = "";
-    while (n != 0)
-    {
-        tmp = to_string(n % 2) + tmp;
-        n /= 2;
-    }
-    cout << tmp;
+    string s = "abcde";
+    s = s.substr(2);
+    cout << s << "\n";
     return 0;
 }
