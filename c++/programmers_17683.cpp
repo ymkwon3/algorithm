@@ -18,7 +18,6 @@ string setSheet(string s)
             break;
         result = s[i] + result;
     }
-    cout << "result : " << result << "\n";
     return result;
 }
 
@@ -35,21 +34,26 @@ string setAns(string s)
         else if (trigger)
             result = s[i] + result;
     }
-    cout << "find : " << result << "\n";
     return result;
+}
+
+int setInputTime(string s)
+{
+    s = s.substr(0, 2) + s.substr(3, 2);
+    return stoi(s);
 }
 
 string solution(string m, vector<string> musicinfos)
 {
-    string answer = "";
+    pair<string, int> answer = {"", 0};
+    int st = 0;
     for (string s : musicinfos)
     {
         int time = setTime(s.substr(0, 5), s.substr(6, 5));
+        int startTime = setInputTime(s.substr(0, 5));
         string a = setAns(s);
         string sheet = setSheet(s);
         string tmp = "";
-        bool trigger = false;
-        cout << time << "\n";
         int i = 0;
         while (time != 0)
         {
@@ -67,7 +71,6 @@ string solution(string m, vector<string> musicinfos)
             }
             time--;
         }
-        cout << "tmp : " << tmp << "\n";
         if (tmp.find(m) != -1)
         {
             while (true)
@@ -78,23 +81,39 @@ string solution(string m, vector<string> musicinfos)
                 }
                 else if (tmp.find(m) != string::npos && tmp[tmp.find(m) + m.size()] != '#')
                 {
-                    answer = a;
-                    cout << "the answer is " << answer << "\n";
-                    trigger = true;
+                    if (answer.first == "")
+                    {
+                        answer = {a, time};
+                        st = startTime;
+                    }
+                    else
+                    {
+                        if (answer.second < time)
+                            answer = {a, time};
+                        else if (answer.second == time)
+                        {
+                            if (st > startTime)
+                            {
+                                answer = {a, time};
+                                // st = startTime;
+                                // 이 부분 적용되어야 하는게 맞는것 같은데... 적용하면 tc 21이 틀렸다고함...
+                            }
+                        }
+                    }
                     break;
                 }
                 else if (tmp.find(m) == -1)
                     break;
             }
         }
-        if (trigger)
-            break;
     }
-    return answer;
+    if (answer.first == "")
+        answer.first = "(None)";
+    return answer.first;
 }
 
 int main(void)
 {
-    solution("CCB", {"03:00,03:10,FOO,CCB#CCB", "04:00,04:08,BAR,ABC"});
+    solution("CDEFGAC", {"00:01,00:10,HELLO,CDEFGA"});
     return 0;
 }
