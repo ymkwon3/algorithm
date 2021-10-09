@@ -12,8 +12,14 @@ using namespace std;
 
 int main()
 {
-    string s = "abcde";
-    s = s.substr(2);
-    cout << s << "\n";
+    int n = 123;
+    int tmp = 0;
+    while (n / 10 != 0)
+    {
+        tmp += n % 10;
+        n /= 10;
+    }
+    tmp += n;
+    cout << tmp << "\n";
     return 0;
 }
