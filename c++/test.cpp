@@ -12,14 +12,10 @@ using namespace std;
 
 int main()
 {
-    int n = 123;
-    int tmp = 0;
-    while (n / 10 != 0)
+    char a = 'a', b = 'a';
+    if (a - b == 0)
     {
-        tmp += n % 10;
-        n /= 10;
+        cout << "123\n";
     }
-    tmp += n;
-    cout << tmp << "\n";
     return 0;
 }
