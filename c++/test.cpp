@@ -5,16 +5,17 @@
 #include <typeinfo>
 #include <queue>
 #include <string>
+#include <cstdlib>
+#include <set>
 
 using namespace std;
 
-map<string, int> m;
-int main(void)
+int main()
 {
-    m["h"] = 2;
-
-
-    cout << m["h"];
-
+    char a = 'a', b = 'a';
+    if (a - b == 0)
+    {
+        cout << "123\n";
+    }
     return 0;
 }
