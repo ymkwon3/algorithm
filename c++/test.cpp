@@ -12,10 +12,9 @@ using namespace std;
 
 int main()
 {
-    char a = 'a', b = 'a';
-    if (a - b == 0)
-    {
-        cout << "123\n";
-    }
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    cout << v[0] << '\n';
     return 0;
 }
