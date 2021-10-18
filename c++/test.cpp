@@ -12,9 +12,14 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
-    vector<int> v(n);
-    cout << v[0] << '\n';
+    vector<int> v(5);
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> v[i];
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        cout << v[i] << "\n";
+    }
     return 0;
 }
