@@ -12,7 +12,8 @@ using namespace std;
 
 int main()
 {
-    cout << floor(7 / 4) << "\n";
-    cout << 7 / 4 << "\n";
+    int e = 1;
+    int E = 2;
+    cout << e << " " << E << "\n";
     return 0;
 }
