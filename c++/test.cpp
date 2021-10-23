@@ -12,8 +12,8 @@ using namespace std;
 
 int main()
 {
-    int e = 1;
-    int E = 2;
-    cout << e << " " << E << "\n";
+    vector<int> v(1);
+    for (int a : v)
+        cout << a;
     return 0;
 }
