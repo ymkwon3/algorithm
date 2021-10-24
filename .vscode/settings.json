@@ -59,6 +59,7 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "bitset": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "random": "cpp"
     }
 }

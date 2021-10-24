@@ -12,8 +12,6 @@ using namespace std;
 
 int main()
 {
-    vector<int> v(1);
-    for (int a : v)
-        cout << a;
+    cout << 2 % 6 << "\n";
     return 0;
 }
