@@ -12,8 +12,16 @@ using namespace std;
 
 int main()
 {
-    string s = "abcde";
-    s = s.substr(0, 5) + 'A' + s.substr(5, 5);
-    cout << s << "\n";
+    vector<int> perm = {0, 1, 2};
+    for (int i : perm)
+    {
+        if (i == 1)
+            perm.erase(perm.begin() + 1);
+        cout << i << "\n";
+    }
+    for (int i : perm)
+    {
+        cout << i << "\n";
+    }
     return 0;
 }
