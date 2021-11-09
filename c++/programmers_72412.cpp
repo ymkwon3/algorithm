@@ -50,6 +50,10 @@ vector<int> solution(vector<string> info, vector<string> query)
         m["----"].push_back(score);
     }
 
+    // 이분탐색을 위한 정렬
+    for (iter = m.begin(); iter != m.end(); iter++)
+        sort(iter->second.begin(), iter->second.end());
+
     for (int i = 0; i < query.size(); i++)
     {
         string line = "";
@@ -68,12 +72,8 @@ vector<int> solution(vector<string> info, vector<string> query)
         }
         score = stoi(tmp);
         int cnt = 0;
-        for (int j = 0; j < m[line].size(); j++)
-        {
-            if (m[line][j] >= score)
-                cnt++;
-        }
-        answer.push_back(cnt);
+        auto itr = lower_bound(m[line].begin(), m[line].end(), score);
+        answer.push_back(m[line].size() - (itr - m[line].begin()));
     }
 
     for (iter = m.begin(); iter != m.end(); iter++)
