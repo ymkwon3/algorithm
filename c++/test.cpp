@@ -12,16 +12,8 @@ using namespace std;
 
 int main()
 {
-    vector<int> perm = {0, 1, 2};
-    for (int i : perm)
-    {
-        if (i == 1)
-            perm.erase(perm.begin() + 1);
-        cout << i << "\n";
-    }
-    for (int i : perm)
-    {
-        cout << i << "\n";
-    }
+    double a = 1, b = 3.0;
+    int c = b / a;
+    cout << c;
     return 0;
 }
