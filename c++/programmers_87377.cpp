@@ -7,7 +7,7 @@ using namespace std;
 vector<string> solution(vector<vector<int>> line)
 {
     vector<vector<int64_t>> v;
-    int64_t xMin = 9999999, xMax = -9999999, yMin = 9999999, yMax = -9999999;
+    int64_t xMin = INT64_MAX, xMax = INT64_MIN, yMin = INT64_MAX, yMax = INT64_MIN;
     for (int i = 0; i < line.size(); i++)
     {
         int64_t a = line[i][0];
