@@ -12,8 +12,11 @@ using namespace std;
 
 int main()
 {
-    double a = 1, b = 3.0;
-    int c = b / a;
-    cout << c;
+    string a = "abcd";
+    string b = "abcc";
+    if (a < b)
+        cout << "a<b\n";
+    else
+        cout << "b<a\n";
     return 0;
 }
