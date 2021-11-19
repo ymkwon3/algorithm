@@ -18,5 +18,6 @@ int main()
         cout << "a<b\n";
     else
         cout << "b<a\n";
+    //db시험..ㅠ
     return 0;
 }
