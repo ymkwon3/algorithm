@@ -14,6 +14,14 @@ function solution(participant, completion) {
             return p
         }
     }
+
+    //위의 방식이 효율성에서 더 빨랐음
+
+    // participant.sort();
+    // completion.sort();
+    // for(let i = 0, len = participant.length; i < len; i++) {
+    //     if(participant[i] != completion[i]) return participant[i];
+    // }
 }
 
 solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"]);

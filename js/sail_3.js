@@ -2,8 +2,7 @@
 
 function solution(s) {
     let answer = "";
-    // abcde c // abcd bc
-    // s[0] s[1] s[2] s[3]
+    // 가운데 인덱스를 찾기 위해 나누기 2
     let middle_idx = parseInt(s.length / 2)
     
     if (s.length % 2 == 0) {

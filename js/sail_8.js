@@ -2,8 +2,8 @@
 
 function solution(arr) {
     let result = 0;
-    for(const n of arr) {
-        result += n;
+    for(let i = 0; i < arr.length; i++) {
+        result += arr[i];
     }
     result /= arr.length;
     return result;

@@ -2,9 +2,9 @@
 
 function solution(arr, divisor) {
     var answer = [];
-    for (const a of arr) {
-        if(a % divisor == 0) {
-            answer.push(a)
+    for (let i = 0 ; i < arr.length; i++) {
+        if(arr[i] % divisor == 0) {
+            answer.push(arr[i])
         }
     }
     answer.sort(function(a, b){
@@ -15,4 +15,4 @@ function solution(arr, divisor) {
     return answer;
 }
 
-solution([2, 36, 1, 3], 1)
+console.log(solution([3, 2, 6], 10))

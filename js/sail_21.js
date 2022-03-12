@@ -15,7 +15,7 @@ function solution(s) {
             index++;
         }
     }
-    return ;
+    return answer;
 }
 
 solution(" try  hello   world ");

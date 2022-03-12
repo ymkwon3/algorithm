@@ -9,11 +9,11 @@ function solution(a, b) {
       b = tmp;
     }
     
-    
+    // 두 정수 사이의 범위를 구하기 위해 작은 값이 a에 위치하도록 함
     for(let i = a; i <= b; i++) {
       sum += i;
     }
-    console.log(sum);
+    c
     return sum;
   }
   

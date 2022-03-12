@@ -6,7 +6,6 @@ function solution(phone_number) {
         result += '*';
     }
     result += phone_number.substr(phone_number.length - 4)
-    console.log(result)
     return result
 }
 
