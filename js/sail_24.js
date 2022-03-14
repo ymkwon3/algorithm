@@ -1,12 +1,5 @@
 // 정수 내림차순으로 배치하기
 
-function solution(n) {
-    let str = n + "";
-    str = str.split("").sort().reverse().join("");
-    console.log(str)
-}
-
-
 // function solution(n) {
 //     let arr = [];
 //     while( n > 0) {
@@ -25,4 +18,6 @@ function solution(n) {
 //     return ans;
 // }
 
-solution(118372);
+const solution = n => +(n + "").split("").sort().reverse().join("");
+
+console.log(solution(118372));
