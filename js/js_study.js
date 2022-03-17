@@ -93,3 +93,16 @@
 // const first = arr1.shift();
 // console.log(first); // 1
 // console.log(arr1); // [2, 3]
+
+
+
+// const test_string = "test";
+// const test_set = new Set([1, 2, 3, 4]);
+// let result_array = Array.from(test_string); // string to array
+// console.log(result_array); // ['t', 'e', 's', 't']
+// result_array = Array.from(test_set); // set to array
+// console.log(result_array); // [1, 2, 3, 4]
+// result_array = Array.from(test_set, x => x * 2); // set to array with mapping
+// console.log(result_array); // [2, 4, 6, 8]
+
+console.log("29" >30)

@@ -1,3 +1,5 @@
+// 약수의 합
+
 function solution(n) {
     let sum = n;
     if (n == 1) return sum;
