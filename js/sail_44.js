@@ -1,21 +1,12 @@
 // 최대공약수와 최소공배수
 
-function solution(n, m) {
+const gcd = (max, min) => max % min == 0 ? min : gcd(min, max % min);
 
-}
+const lcm = (max, min) => max * min / gcd(max, min);
 
-console.log(3, 12);
+const solution = (n, m) => n > m ? [gcd(n, m), lcm(n,m)] : [gcd(m, n), lcm(m, n)];
 
-
-
-
-
-
-
-
-
-
-
+console.log(solution(3, 12));
 
 
 
