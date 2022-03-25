@@ -1,10 +1,4 @@
-let arr = [1, 2, 3, 4, 5];
+let obj = {a: 1, b: 2, c:3};
+let {a, c} = obj;
 
-arr.reduce((acc, value, index) => {
-    console.log(acc, value, index);
-
-    return acc + value;
-}, 0)
-
-
-console.log(arr);
+console.log(a, c)
