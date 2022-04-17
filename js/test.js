@@ -1,4 +1,10 @@
-let obj = {a: 1, b: 2, c:3};
-let {a, c} = obj;
+let name = "영민";
+function second(param) {
+  console.log(param + name);
+}
 
-console.log(a, c)
+function first() {
+  let name = "영민아님";
+  second('나는 ');
+}
+first(); // "나는 영민"
