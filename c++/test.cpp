@@ -12,12 +12,8 @@ using namespace std;
 
 int main()
 {
-    string a = "abcd";
-    string b = "abcc";
-    if (a < b)
-        cout << "a<b\n";
-    else
-        cout << "b<a\n";
-    //db시험..ㅠ
+    int a = 1, b = 3;
+    long long c = a * b;
+    cout << c;
     return 0;
 }
