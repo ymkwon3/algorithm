@@ -5,7 +5,6 @@
  */
  var strStr = function(haystack, needle) {
     let ans = haystack.indexOf(needle)
-    console.log(ans)
     return ans;
 };
 
