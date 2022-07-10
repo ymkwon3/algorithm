@@ -37,4 +37,10 @@
 // }, 0);
 // console.log('three');
 
-console.log('{'.charCodeAt() - ')'.charCodeAt())
+// var foo = {n: 1};
+// var bar = foo;
+// foo.x = foo = {n: 2};
+// console.log(foo.x)
+
+let a = 1, b = 2;
+console.log(a, b)
